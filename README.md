@@ -25,6 +25,6 @@ docker pull kienkt/shoeshop_app:v1
 docker pull kienkt/shoeshop_mysqldb:v1
 
 ## Run docker-compose 
-mkdir docker-compose.yml && vi docker-compose.yml  
+vi docker-compose.yml  
 Copy file docker-compose.yml and run:  
 docker-compose up -d
