@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: kienkt/shoeshop_mysqldb:v1
+    container_name: shoeshop-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shoeshop
+      MYSQL_USER: shoeshop
+      MYSQL_PASSWORD: shoeshop
+    ports:
+      - "3306:3306"
+    networks:
+      - shoeshop-network
+
+  shoeshop-app:
+    image: kienkt/shoeshop_app:v1
+    container_name: shoeshop-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/shoeshop
+      SPRING_DATASOURCE_USERNAME: shoeshop
+      SPRING_DATASOURCE_PASSWORD: shoeshop
+    networks:
+      - shoeshop-network
+
+networks:
+  shoeshop-network:
+    driver: bridge
