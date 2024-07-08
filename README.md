@@ -21,8 +21,8 @@ chmod +x install-docker.sh
 sh install-docker.sh  
 
 ## Pull docker images
-docker pull kienkt/shoeshop_app:v1  
-docker pull kienkt/shoeshop_mysqldb:v1
+docker pull kienkt/shoeshop_app:v2  
+docker pull kienkt/shoeshop_mysql:v2  
 
 ## Run docker-compose 
 vi docker-compose.yml  
