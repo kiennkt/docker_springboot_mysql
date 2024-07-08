@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysql:
-    image: kienkt/shoeshop_mysqldb:v1
+    image: kienkt/shoeshop_mysql:v2
     container_name: shoeshop-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -15,7 +15,7 @@ services:
       - shoeshop-network
 
   shoeshop-app:
-    image: kienkt/shoeshop_app:v1
+    image: kienkt/shoeshop_app:v2
     container_name: shoeshop-app
     depends_on:
       - mysql
